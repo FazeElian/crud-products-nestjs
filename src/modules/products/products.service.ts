@@ -28,8 +28,14 @@ export class ProductsService {
         }
     }
 
-    getProducts() {
-        // Return all the array
-        return this._products;
+    getProducts(start?: string) {
+        if (!start) {
+            // Return all the products
+            return this._products;
+        } else {
+            return this._products.filter(
+                n => n.toLowerCase().trim().startsWith(start.toLowerCase().trim())
+            );
+        }
     }
 }

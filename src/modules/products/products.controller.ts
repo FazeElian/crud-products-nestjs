@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { ProductsService } from './products.service';
 
 @Controller('api/products')
@@ -16,7 +16,7 @@ export class ProductsController {
     }
 
     @Get()
-    getProducts() {
-        return this.ProductsService.getProducts();
+    getProducts(@Query("start") start: string) {
+        return this.ProductsService.getProducts(start);
     }
 }
