@@ -38,4 +38,23 @@ export class ProductsService {
             );
         }
     }
+
+    updateProduct(product: string, newProduct: string) {
+        // Product finding
+        const indexProductFound = this._products.findIndex(
+            n => n.toLowerCase().trim() == product.toLowerCase().trim()
+        );
+
+        // New Product finding
+        const indexNewProductFound = this._products.findIndex(
+            n => n.toLowerCase().trim() == newProduct.toLowerCase().trim()
+        );
+
+        if (indexProductFound != -1 && indexNewProductFound == -1) {
+            this._products[indexProductFound] = newProduct;
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
