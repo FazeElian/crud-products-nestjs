@@ -11,11 +11,22 @@ export class ProductsService {
     }
 
     createProduct(product: string) {
-        // Add an element at the end of the array
-        this._products.push(product);
+        // Product finding
+        const productFound = this._products.find(
+            // trim() -> delete spaces between letters
+            // toLowerCase -> transforms all the characters to lower case
+            n => n.toLowerCase().trim() == product.toLowerCase().trim()
+        );
 
-        // Print the array elements
-        console.log("Products:", this._products)
-        return true;
+        if (!productFound) {
+            // Add an element at the end of the array
+            this._products.push(product);
+
+            // Print the array elements
+            console.log("Products:", this._products)
+            return true;
+        } else {
+            return false;
+        }
     }
 }
