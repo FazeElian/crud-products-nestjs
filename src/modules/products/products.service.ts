@@ -58,6 +58,11 @@ export class ProductsService {
         }
     }
 
+    clearProducts() {
+        this._products = [];
+        return true;
+    }
+
     deleteProduct(product: string) {
         const deletedBefore = this._products.length;
         this._products = this._products.filter(

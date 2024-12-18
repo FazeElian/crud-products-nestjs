@@ -34,6 +34,11 @@ export class ProductsController {
         return this.ProductsService.updateProduct(product, newProduct); 
     }
 
+    @Delete("clear")
+    clearProducts() {
+        return this.ProductsService.clearProducts();
+    }
+
     @Delete("/:product")
     deleteProduct(@Param("product") product: string){
         return this.ProductsService.deleteProduct(product);
