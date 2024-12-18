@@ -57,4 +57,15 @@ export class ProductsService {
             return false;
         }
     }
+
+    deleteProduct(product: string) {
+        const deletedBefore = this._products.length;
+        this._products = this._products.filter(
+            n => n.toLowerCase().trim() != product.toLowerCase().trim()
+        );
+
+        const deletedAfter = this._products.length;
+
+        return deletedBefore != deletedAfter;
+    }
 }

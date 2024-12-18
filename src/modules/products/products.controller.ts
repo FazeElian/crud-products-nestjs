@@ -1,6 +1,7 @@
 import {
     Body,
     Controller,
+    Delete,
     Get,
     Param,
     Post,
@@ -31,5 +32,10 @@ export class ProductsController {
     @Put("/:product/:newProduct")
     updateProduct(@Param("product") product: string, @Param("newProduct") newProduct : string) {
         return this.ProductsService.updateProduct(product, newProduct); 
+    }
+
+    @Delete("/:product")
+    deleteProduct(@Param("product") product: string){
+        return this.ProductsService.deleteProduct(product);
     }
 }
