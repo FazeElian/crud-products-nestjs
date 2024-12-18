@@ -22,11 +22,14 @@ export class ProductsService {
             // Add an element at the end of the array
             this._products.push(product);
 
-            // Print the array elements
-            console.log("Products:", this._products)
             return true;
         } else {
             return false;
         }
+    }
+
+    getProducts() {
+        // Return all the array
+        return this._products;
     }
 }

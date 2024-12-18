@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ProductsService } from './products.service';
 
 @Controller('api/products')
@@ -13,5 +13,10 @@ export class ProductsController {
     createProduct(@Body() data: { product: string }) {
         // call the method from the service when we send the product
         return this.ProductsService.createProduct(data.product)
+    }
+
+    @Get()
+    getProducts() {
+        return this.ProductsService.getProducts();
     }
 }
