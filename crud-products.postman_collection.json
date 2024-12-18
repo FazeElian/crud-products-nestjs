@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "532413ec-a271-46c8-92ca-a7c63c2eddda",
+		"name": "crud-products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37470122"
+	},
+	"item": [
+		{
+			"name": "getProducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{HOST}}{{PORT}}/api/products",
+					"host": [
+						"{{HOST}}{{PORT}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": \"Monitofghr\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{PORT}}/api/products",
+					"host": [
+						"{{HOST}}{{PORT}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{PORT}}/api/products/PC/Laptop",
+					"host": [
+						"{{HOST}}{{PORT}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"PC",
+						"Laptop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProduct",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{PORT}}/api/products/PC",
+					"host": [
+						"{{HOST}}{{PORT}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"PC"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clearProducts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{PORT}}/api/products/clear",
+					"host": [
+						"{{HOST}}{{PORT}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"clear"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
